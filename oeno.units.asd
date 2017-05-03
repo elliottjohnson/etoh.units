@@ -1,10 +1,11 @@
 ;;;; oeno.units.asd
 
 (asdf:defsystem #:oeno.units
-  :description "Describe oeno.units here"
-  :author "Your Name <your.name@example.com>"
-  :license "Specify license here"
+  :description "Common and uncommon units used in beverage production."
+  :author "Elliott Johnson <elliott@elliottjohnson.net>"
+  :license "LLGPL"
   :serial t
+  :depends-on ("unit-formulas")
   :components ((:file "package")
                (:file "oeno.units")))
 
