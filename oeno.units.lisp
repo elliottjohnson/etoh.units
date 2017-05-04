@@ -169,6 +169,7 @@
   ((barrel-fr-bordeaux bbl-bordeaux barrique) (* 225 liters))
   ((barrel-fr-burgundy bbl-burgundy) (* 228 liters))
   ((barrel-fr-cognac bbl-cognac barrique-cognac) (* 300 liters))
+  ((pinte-fr pinte) (* 952.146 ml))	; ~2 UK pints
   ((chopine-canadian chopine-ca) imp-pint)
   ((chopine-fr) (/ pinte-fr 2))
   ((demi-fr-beer) (* 250 ml))
@@ -178,8 +179,7 @@
   ((french-cubic-foot cubic-foot-fr cubic-feet-fr)
    (/ meter 3))
   ((galopin-fr galopin) (* 200 ml))
-  ((muid-fr muid) (* 8 cubic-feet-fr))
-  ((pinte-fr pinte) (* 952.146 ml))	; ~2 UK pints
+  ((muid-fr muid) (* 8 cubic-feet-fr)) 
   ((pied-cube-fr pied-cube) (* 36 pinte-fr))
   ((pipa-fr-anjou pipa-anjou) (* 405.21 liters))
   ((posson-fr posson) (/ pinte-fr 8))
