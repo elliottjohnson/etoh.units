@@ -227,6 +227,16 @@
   ((hectoliter hl) (* 100 liters))
   ((pint-metric pints-metric) (* 500 ml))
   ((pinte-fr-canadian pinte-fr-ca) pint-metric)
+  ((shot-metric shot-au shot-in ) (* 30 ml))
+  ((shot-ca) imp-floz)
+  ((shot-bg shot-hu shot-pl shot-ro shot-ru shot-rs shot-sk) (* 50 ml))
+  ((shot-ee shot-fi shot-se) (* 40 ml))
+  ((shot-de) (* 20 ml))
+  ((shot-gr) (* 45 ml))
+  ((shot-ie shot-uk) (* 35.5 ml)) ; Irish shot from 1/4 gill
+  ((shot-il shot-jp) (* 60 ml)) ; 50mL - 60mL
+  ((shot-za) (* 25 ml))
+  
   ((teaspoon-metric-kitchen kitchen-teaspoon kitchen-tsp)
    (* 5 ml))
   ((dessertspoon-metric-cooking dsp-cooking dssp-cooking)
@@ -302,8 +312,9 @@
   ((minim-us minims-us) (/ fluid-ounce 480))
   ((peck-us pecks-us) (* 537.605 in^3))
   ((pint-us pints-us pint-us-liquid) (/ gallon 8))
-  ((pony-shot) (* 0.75 fluid-ounce))
-  ((shot-us shot) fluid-ounce)
+  ((pony-shot) fluid-ounce)
+  ((shot-us shot) jigger)
   ((smidgen-us smidgen) (/ teaspoon 32))
   ((tumbler-us tumbler) cup)
   ((wineglass-us wineglass) gill-us))
+
