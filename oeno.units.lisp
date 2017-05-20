@@ -7,6 +7,13 @@
 	       collect `(define-units ,unit-name
 			    ,unit-definition))))
 
+(defformulae* kelvin-to-fahrenheit ((k kelvin))
+  (- (* 9/5 k) (459.67 kelvin)))
+;; Used in unit definitions, so we can't have the units be fahrenheit, since
+;; fahrenheit would need to exist in order to define it... instead we use unity.
+(defformulae* unit-formulas::fahrenheit-to-kelvin ((f unity))
+  (* 5/9 (+ 459.67 f) kelvin))
+
 (define-unit-list
 
   ;; Compound units:
@@ -296,6 +303,7 @@
   ((puncheon-us-beer) (* 72 gallons))
   ((puncheon-us-wine) (* 84 gallons))
   ((dash-us dashes-us ds-us) (/ teaspoon 8))
+  ((splash-us) (/ fluid-ounce 12))
   ((pinch-us pinches-us) (/ dash-us 2))
   ((dessertspoon-us dsp-us dssp-us) (* 2 teaspoons))
   ((drop-us drops-us drop drops) (/ teaspoon 60))
@@ -306,15 +314,19 @@
   ((gallon-us-fifth gal-us-fifth gal-us-1/5 fifth) (/ gallon 5))
   ((gill-us) (* 4 fluid-ounces))
   ((gorda-us) (* 185 gallons))
-  ((jigger) (* 1.5 fluid-ounces))
+  ((jigger-us jigger jiggers) (* 1.5 fluid-ounces))
   ((keg-us kegs-us keg kegs half-barrel 1/2-bbl) (* 15.5 gallons))
   ((minikeg-us minikegs-us minikeg minikegs) (* 5 liters))
   ((minim-us minims-us) (/ fluid-ounce 480))
   ((peck-us pecks-us) (* 537.605 in^3))
   ((pint-us pints-us pint-us-liquid) (/ gallon 8))
   ((pony-shot) fluid-ounce)
-  ((shot-us shot) jigger)
+  ((shot-us shot shots) jigger)
   ((smidgen-us smidgen) (/ teaspoon 32))
+  ((snit-us snit) (* 2 jiggers))
   ((tumbler-us tumbler) cup)
-  ((wineglass-us wineglass) gill-us))
+  ((wineglass-us wineglass) gill-us)
 
+  ;; Temperature
+  ((celsius centigrade degrees-celsius degC) (+ kelvin 272.15))
+  ((fahrenheit degF) unit-formulas::fahrenheit-to-kelvin))
