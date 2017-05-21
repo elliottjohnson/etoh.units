@@ -7,12 +7,12 @@
 	       collect `(define-units ,unit-name
 			    ,unit-definition))))
 
+;; Formula used in unit definitions
+;;   The formula-to must use unity as the unit, since its a chicken/egg scenario
+(defformulae* fahrenheit-to-kelvin ((f unity))
+  (* 5/9 (+ 459.67 f) kelvin))
 (defformulae* kelvin-to-fahrenheit ((k kelvin))
   (- (* 9/5 k) (459.67 kelvin)))
-;; Used in unit definitions, so we can't have the units be fahrenheit, since
-;; fahrenheit would need to exist in order to define it... instead we use unity.
-(defformulae* unit-formulas::fahrenheit-to-kelvin ((f unity))
-  (* 5/9 (+ 459.67 f) kelvin))
 
 (define-unit-list
 
@@ -58,7 +58,7 @@
   ((parts-per-billion ppb) 0.00000001)
   ((parts-per-trillion ppt) 0.000000001)
 
-  ;; Practical and impractical units (... & how they live on).
+  ;; Practical and impractical units
   ;;   Bottles, cases
   ((bottle bottles) (* 750 ml))
   ((split splits demi demis) (/ 2 bottle))
@@ -329,4 +329,5 @@
 
   ;; Temperature
   ((celsius centigrade degrees-celsius degC) (+ kelvin 272.15))
-  ((fahrenheit degF) unit-formulas::fahrenheit-to-kelvin))
+  ((fahrenheit degF) (formula-unit :formula-to fahrenheit-to-kelvin
+				   :formula-from kelvin-to-fahrenheit)))
