@@ -13,6 +13,10 @@
   (* 5/9 (+ 459.67 f) kelvin))
 (defformulae* kelvin-to-fahrenheit ((k kelvin))
   (- (* 9/5 k) (459.67 kelvin)))
+(defformulae* celsius-to-kelvin ((c unity))
+  (* (+ c 273.15) kelvin))
+(defformulae* kelvin-to-celsius ((k kelvin))
+  (- k (273.15 kelvin)))
 
 (define-unit-list
 
@@ -328,6 +332,9 @@
   ((wineglass-us wineglass) gill-us)
 
   ;; Temperature
-  ((celsius centigrade degrees-celsius degC) (+ kelvin 272.15))
-  ((fahrenheit degF) (formula-unit :formula-to fahrenheit-to-kelvin
-				   :formula-from kelvin-to-fahrenheit)))
+  ((celsius centigrade degrees-celsius degC)
+   (formula :convert-to celsius-to-kelvin
+	    :convert-from kelvin-to-celsius))
+  ((fahrenheit degrees-fahrenheit degF)
+   (formula :convert-to fahrenheit-to-kelvin
+	    :convert-from kelvin-to-fahrenheit)))
