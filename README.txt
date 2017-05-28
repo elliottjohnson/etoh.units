@@ -1,9 +1,9 @@
-oeno.units: common and uncommon units used in beverage production.
+etoh.units: common and uncommon units used in beverage production.
 
 Building upon unit-formulas, this library provides many standard,
 metric, historical, and exotic units used in beverage production.
 
-Most of the units were from the pedagogy of professors of Fresno
+Most of the units were from the pedagogy of professors from Fresno
 State's Enology program (R.I.P. Ken Fugelsang) and found online.
 
 Online resources include wikipedia.org, ttb.gov, conversioncenter.net,
