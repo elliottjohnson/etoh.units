@@ -1,11 +1,11 @@
-;;;; oeno.units.asd
+;;;; etoh.units.asd
 
-(asdf:defsystem #:oeno.units
-  :description "Common and uncommon units used in beverage production."
+(asdf:defsystem #:etoh.units
+  :description "Common and uncommon units used in adult beverage production."
   :author "Elliott Johnson <elliott@elliottjohnson.net>"
   :license "LLGPL"
   :serial t
   :depends-on ("unit-formulas")
   :components ((:file "package")
-               (:file "oeno.units")))
+               (:file "etoh.units")))
 

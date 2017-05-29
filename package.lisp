@@ -1,5 +1,5 @@
 ;;;; package.lisp
 
-(defpackage #:oeno.units
+(defpackage #:etoh.units
   (:use #:cl #:unit-formulas))
 

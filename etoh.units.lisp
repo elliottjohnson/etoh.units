@@ -1,14 +1,14 @@
-;;;; oeno.units.lisp
+;;;; etoh.units.lisp
 
-(in-package #:oeno.units)
+(in-package #:etoh.units)
 
 (defmacro define-unit-list (&rest unit-list)
   `(progn ,@(loop for (unit-name unit-definition) in unit-list
 	       collect `(define-units ,unit-name
 			    ,unit-definition))))
 
-;; Formula used in unit definitions
-;;   The formula-to must use unity as the unit, since its a chicken/egg scenario
+;; Formulae used in unit definitions
+;;   The convert-to must use unity as the unit, since its a chicken/egg scenario
 (defformulae* fahrenheit-to-kelvin ((f unity))
   (* 5/9 (+ 459.67 f) kelvin))
 (defformulae* kelvin-to-fahrenheit ((k kelvin))
@@ -50,11 +50,12 @@
   ;; Inverse mol, common for unit conversion
   ((1/mole 1/mol) (/ 1 mol))
 
-  ;; Dimensionless units
-
+  ;;; Dimensionless units
+  
   ;; Proof is commonly used, especially with spirits.
-  ((proof pf degrees-proof proof-us pf-us) (* 2 percent))
-  ((english-proof proof-uk pf-uk) (* 7/4)) ; get out the gunpowder.
+
+  ((proof pf degrees-proof proof-us pf-us) (/ percent 2))
+  ((english-proof proof-uk pf-uk) (/ percent 7/4)) ; get out the gunpowder.
 
   ;; parts notation is often used.
   ((parts-per-thousand ‰ pp-thousand) 0.001)
