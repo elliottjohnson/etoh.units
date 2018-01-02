@@ -46,6 +46,7 @@
   ((g/L grams-per-liter) (/ grams liter))    ; ppt
   ((mg/L milligrams-per-liter) (/ mg liter)) ; ppm
   ((g/ml grams-per-milliliter) (/ grams ml))
+  ((lbs/1000 pounds-per-thousand pounds-per-thousand-gallons) (/ lbs ))
   
   ;; Inverse mol, common for unit conversion
   ((1/mole 1/mol) (/ 1 mol))
