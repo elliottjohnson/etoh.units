@@ -86,6 +86,7 @@
   ((tonneau-wine) (1200 bottles))
   ;;   Packaging volumes for bottles (750ml only)
   ((cases case) (12 bottles))
+  ((half-case 1/2-case case/2) (/ case 2))
   ((pallet pallets) (56 cases))
 
   ;; Vineyard to winery units. TODO add them here.
